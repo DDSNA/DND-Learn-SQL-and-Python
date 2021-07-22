@@ -2,6 +2,8 @@
 #The download path should be local in a new static folder
 #The goal is to auto-delete the json after the program is no longer in use and the user closes it - permanent deletion
 
+#current issue: the file is not a json. Postman might be a solution
+
 from requests import get
 #to make get request
 
