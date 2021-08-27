@@ -3,8 +3,8 @@
 #The goal is to auto-delete the json after the program is no longer in use and the user closes it - permanent deletion
 
 import requests
-import pandas as pd
 import json
+from pathlib import Path
 
 #to make get request
     #1
@@ -36,5 +36,7 @@ result.text
 result.json()
 print(result.json())
 data = result.text
-with open("Data.json", "w") as out_file:
+#due to this path, this script is Windows only
+Path("C:/Users/Public/Desktop/Data-Analysis-Folders/Script-Temporary-Data").mkdir(parents=True, exist_ok=True)
+with open("C:/Users/Public/Desktop/Data-Analysis-Folders/Script-Temporary-Data/Data.json", "w") as out_file:
     json.dump(data, out_file)
